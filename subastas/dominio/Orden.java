@@ -1,4 +1,4 @@
-package subastas.dominio;
+package ccopaccana.ivan.dominio;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -47,17 +47,69 @@ public class Orden {
 
     // Getters y Setters
 
+    /**
+     * Retorna el nombre del ganador de la orden.
+     * @return Nombre del ganador
+     */
     public String getNombreGanador() { return nombreGanador; }
+
+    /**
+     * Establece el nombre del ganador de la orden.
+     * @param nombreGanador Nombre a asignar
+     */
     public void setNombreGanador(String nombreGanador) { this.nombreGanador = nombreGanador; }
 
+    /**
+     * Retorna la fecha en que se generó la orden.
+     * @return Fecha de la orden
+     */
     public LocalDate getFechaOrden() { return fechaOrden; }
+
+    /**
+     * Establece la fecha de la orden.
+     * @param fechaOrden Fecha a asignar
+     */
     public void setFechaOrden(LocalDate fechaOrden) { this.fechaOrden = fechaOrden; }
 
+    /**
+     * Retorna la lista de objetos adjudicados en la orden.
+     * @return Lista de objetos adjudicados
+     */
     public ArrayList<Objeto> getObjetosAdjudicados() { return objetosAdjudicados; }
+
+    /**
+     * Establece la lista de objetos adjudicados en la orden.
+     * @param objetosAdjudicados Lista de objetos a asignar
+     */
     public void setObjetosAdjudicados(ArrayList<Objeto> objetosAdjudicados) { this.objetosAdjudicados = objetosAdjudicados; }
 
+    /**
+     * Retorna el precio total de la orden.
+     * @return Precio total
+     */
     public double getPrecioTotal() { return precioTotal; }
+
+    /**
+     * Establece el precio total de la orden.
+     * @param precioTotal Precio total a asignar
+     */
     public void setPrecioTotal(double precioTotal) { this.precioTotal = precioTotal; }
+
+    /**
+     * Compara esta orden con otra por igualdad.
+     * Dos órdenes son iguales si tienen el mismo ganador y fecha.
+     *
+     * @param obj Objeto a comparar
+     * @return true si son iguales, false en caso contrario
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Orden other = (Orden) obj;
+        return nombreGanador != null && nombreGanador.equals(other.nombreGanador) &&
+               fechaOrden != null && fechaOrden.equals(other.fechaOrden);
+    }
 
     /**
      * Retorna una representación en texto de la orden.

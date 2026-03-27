@@ -1,4 +1,4 @@
-package subastas.dominio;
+package ccopaccana.ivan.dominio;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -68,20 +68,80 @@ public abstract class Usuario {
 
     // Getters y Setters
 
+    /**
+     * Retorna el nombre completo del usuario.
+     * @return Nombre completo
+     */
     public String getNombreCompleto() { return nombreCompleto; }
+
+    /**
+     * Establece el nombre completo del usuario.
+     * @param nombreCompleto Nombre completo a asignar
+     */
     public void setNombreCompleto(String nombreCompleto) { this.nombreCompleto = nombreCompleto; }
 
+    /**
+     * Retorna la identificación única del usuario.
+     * @return Identificación
+     */
     public String getIdentificacion() { return identificacion; }
+
+    /**
+     * Establece la identificación única del usuario.
+     * @param identificacion Identificación a asignar
+     */
     public void setIdentificacion(String identificacion) { this.identificacion = identificacion; }
 
+    /**
+     * Retorna la fecha de nacimiento del usuario.
+     * @return Fecha de nacimiento
+     */
     public LocalDate getFechaNacimiento() { return fechaNacimiento; }
+
+    /**
+     * Establece la fecha de nacimiento del usuario.
+     * @param fechaNacimiento Fecha de nacimiento a asignar
+     */
     public void setFechaNacimiento(LocalDate fechaNacimiento) { this.fechaNacimiento = fechaNacimiento; }
 
+    /**
+     * Retorna la contraseña del usuario.
+     * @return Contraseña
+     */
     public String getContrasena() { return contrasena; }
+
+    /**
+     * Establece la contraseña del usuario.
+     * @param contrasena Contraseña a asignar
+     */
     public void setContrasena(String contrasena) { this.contrasena = contrasena; }
 
+    /**
+     * Retorna el correo electrónico del usuario.
+     * @return Correo electrónico
+     */
     public String getCorreoElectronico() { return correoElectronico; }
+
+    /**
+     * Establece el correo electrónico del usuario.
+     * @param correoElectronico Correo electrónico a asignar
+     */
     public void setCorreoElectronico(String correoElectronico) { this.correoElectronico = correoElectronico; }
+
+    /**
+     * Compara este usuario con otro objeto por igualdad.
+     * Dos usuarios son iguales si tienen la misma identificación.
+     *
+     * @param obj Objeto a comparar
+     * @return true si son iguales, false en caso contrario
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Usuario other = (Usuario) obj;
+        return identificacion != null && identificacion.equals(other.identificacion);
+    }
 
     /**
      * Retorna una representación en texto del usuario.

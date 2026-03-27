@@ -1,4 +1,4 @@
-package subastas.dominio;
+package ccopaccana.ivan.dominio;
 
 import java.time.LocalDate;
 

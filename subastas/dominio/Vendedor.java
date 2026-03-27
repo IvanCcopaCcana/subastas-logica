@@ -1,4 +1,4 @@
-package subastas.dominio;
+package ccopaccana.ivan.dominio;
 
 import java.time.LocalDate;
 
@@ -42,10 +42,28 @@ public class Vendedor extends Usuario {
 
     // Getters y Setters
 
+    /**
+     * Retorna la puntuación del vendedor.
+     * @return Puntuación
+     */
     public double getPuntuacion() { return puntuacion; }
+
+    /**
+     * Establece la puntuación del vendedor.
+     * @param puntuacion Puntuación a asignar
+     */
     public void setPuntuacion(double puntuacion) { this.puntuacion = puntuacion; }
 
+    /**
+     * Retorna la dirección del vendedor.
+     * @return Dirección
+     */
     public String getDireccion() { return direccion; }
+
+    /**
+     * Establece la dirección del vendedor.
+     * @param direccion Dirección a asignar
+     */
     public void setDireccion(String direccion) { this.direccion = direccion; }
 
     /**

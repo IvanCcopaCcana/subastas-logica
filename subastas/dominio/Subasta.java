@@ -1,4 +1,4 @@
-package subastas.dominio;
+package ccopaccana.ivan.dominio;
 
 import java.time.LocalDateTime;
 import java.time.Duration;
@@ -119,23 +119,93 @@ public class Subasta {
 
     // Getters y Setters
 
+    /**
+     * Retorna la fecha y hora de vencimiento de la subasta.
+     * @return Fecha de vencimiento
+     */
     public LocalDateTime getFechaVencimiento() { return fechaVencimiento; }
+
+    /**
+     * Establece la fecha y hora de vencimiento de la subasta.
+     * @param fechaVencimiento Fecha de vencimiento a asignar
+     */
     public void setFechaVencimiento(LocalDateTime fechaVencimiento) { this.fechaVencimiento = fechaVencimiento; }
 
+    /**
+     * Retorna el usuario creador de la subasta.
+     * @return Creador de la subasta
+     */
     public Usuario getCreador() { return creador; }
+
+    /**
+     * Establece el usuario creador de la subasta.
+     * @param creador Usuario creador a asignar
+     */
     public void setCreador(Usuario creador) { this.creador = creador; }
 
+    /**
+     * Retorna el precio mínimo de aceptación de la subasta.
+     * @return Precio mínimo
+     */
     public double getPrecioMinimo() { return precioMinimo; }
+
+    /**
+     * Establece el precio mínimo de aceptación de la subasta.
+     * @param precioMinimo Precio mínimo a asignar
+     */
     public void setPrecioMinimo(double precioMinimo) { this.precioMinimo = precioMinimo; }
 
+    /**
+     * Retorna la lista de objetos asociados a la subasta.
+     * @return Lista de objetos
+     */
     public ArrayList<Objeto> getObjetos() { return objetos; }
+
+    /**
+     * Establece la lista de objetos de la subasta.
+     * @param objetos Lista de objetos a asignar
+     */
     public void setObjetos(ArrayList<Objeto> objetos) { this.objetos = objetos; }
 
+    /**
+     * Retorna la lista de ofertas realizadas en la subasta.
+     * @return Lista de ofertas
+     */
     public ArrayList<Oferta> getOfertas() { return ofertas; }
+
+    /**
+     * Establece la lista de ofertas de la subasta.
+     * @param ofertas Lista de ofertas a asignar
+     */
     public void setOfertas(ArrayList<Oferta> ofertas) { this.ofertas = ofertas; }
 
+    /**
+     * Retorna el estado actual de la subasta.
+     * @return Estado (activa, finalizada, adjudicada)
+     */
     public String getEstado() { return estado; }
+
+    /**
+     * Establece el estado de la subasta.
+     * @param estado Estado a asignar
+     */
     public void setEstado(String estado) { this.estado = estado; }
+
+    /**
+     * Compara esta subasta con otra por igualdad.
+     * Dos subastas son iguales si tienen el mismo creador y fecha de vencimiento.
+     *
+     * @param obj Objeto a comparar
+     * @return true si son iguales, false en caso contrario
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Subasta other = (Subasta) obj;
+        return creador != null && creador.equals(other.creador) &&
+               fechaVencimiento != null && fechaVencimiento.equals(other.fechaVencimiento);
+    }
 
     /**
      * Retorna una representación en texto de la subasta.

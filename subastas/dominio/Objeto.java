@@ -1,4 +1,4 @@
-package subastas.dominio;
+package ccopaccana.ivan.dominio;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -53,17 +53,69 @@ public class Objeto {
 
     // Getters y Setters
 
+    /**
+     * Retorna el nombre del objeto.
+     * @return Nombre
+     */
     public String getNombre() { return nombre; }
+
+    /**
+     * Establece el nombre del objeto.
+     * @param nombre Nombre a asignar
+     */
     public void setNombre(String nombre) { this.nombre = nombre; }
 
+    /**
+     * Retorna la descripción del objeto.
+     * @return Descripción
+     */
     public String getDescripcion() { return descripcion; }
+
+    /**
+     * Establece la descripción del objeto.
+     * @param descripcion Descripción a asignar
+     */
     public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
 
+    /**
+     * Retorna el estado del objeto.
+     * @return Estado (nuevo, usado, antiguo sin abrir)
+     */
     public String getEstado() { return estado; }
+
+    /**
+     * Establece el estado del objeto.
+     * @param estado Estado a asignar
+     */
     public void setEstado(String estado) { this.estado = estado; }
 
+    /**
+     * Retorna la fecha de compra del objeto.
+     * @return Fecha de compra
+     */
     public LocalDate getFechaCompra() { return fechaCompra; }
+
+    /**
+     * Establece la fecha de compra del objeto.
+     * @param fechaCompra Fecha de compra a asignar
+     */
     public void setFechaCompra(LocalDate fechaCompra) { this.fechaCompra = fechaCompra; }
+
+    /**
+     * Compara este objeto con otro por igualdad.
+     * Dos objetos son iguales si tienen el mismo nombre y fecha de compra.
+     *
+     * @param obj Objeto a comparar
+     * @return true si son iguales, false en caso contrario
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Objeto other = (Objeto) obj;
+        return nombre != null && nombre.equals(other.nombre) &&
+               fechaCompra != null && fechaCompra.equals(other.fechaCompra);
+    }
 
     /**
      * Retorna una representación en texto del objeto.

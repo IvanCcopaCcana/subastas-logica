@@ -1,6 +1,6 @@
-package subastas.logica;
+package ccopaccana.ivan.logica;
 
-import subastas.dominio.*;
+import ccopaccana.ivan.dominio.*;
 import java.util.ArrayList;
 
 /**
@@ -207,5 +207,33 @@ public class ControladorSubastas {
         return ordenes;
     }
 
+    /**
+     * Retorna el moderador registrado en el sistema.
+     * @return Moderador del sistema, o null si no existe
+     */
     public Moderador getModerador() { return moderador; }
+
+    // =================== SESIÓN ===================
+
+    /**
+     * Intenta iniciar sesión con el correo y contraseña dados.
+     * Verifica primero entre los usuarios registrados y luego el moderador.
+     *
+     * @param correo     Correo electrónico del usuario
+     * @param contrasena Contraseña del usuario
+     * @return El usuario autenticado, o null si las credenciales son incorrectas
+     */
+    public Usuario iniciarSesion(String correo, String contrasena) {
+        for (Usuario u : usuarios) {
+            if (u.getCorreoElectronico().equals(correo) && u.getContrasena().equals(contrasena)) {
+                return u;
+            }
+        }
+        if (moderador != null &&
+            moderador.getCorreoElectronico().equals(correo) &&
+            moderador.getContrasena().equals(contrasena)) {
+            return moderador;
+        }
+        return null;
+    }
 }

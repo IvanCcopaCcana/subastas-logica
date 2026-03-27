@@ -1,4 +1,4 @@
-package subastas.dominio;
+package ccopaccana.ivan.dominio;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -74,16 +74,52 @@ public class Coleccionista extends Usuario {
 
     // Getters y Setters
 
+    /**
+     * Retorna la puntuación del coleccionista.
+     * @return Puntuación
+     */
     public double getPuntuacion() { return puntuacion; }
+
+    /**
+     * Establece la puntuación del coleccionista.
+     * @param puntuacion Puntuación a asignar
+     */
     public void setPuntuacion(double puntuacion) { this.puntuacion = puntuacion; }
 
+    /**
+     * Retorna la dirección del coleccionista.
+     * @return Dirección
+     */
     public String getDireccion() { return direccion; }
+
+    /**
+     * Establece la dirección del coleccionista.
+     * @param direccion Dirección a asignar
+     */
     public void setDireccion(String direccion) { this.direccion = direccion; }
 
+    /**
+     * Retorna la lista de intereses del coleccionista.
+     * @return Lista de intereses
+     */
     public ArrayList<String> getIntereses() { return intereses; }
+
+    /**
+     * Establece la lista de intereses del coleccionista.
+     * @param intereses Lista de intereses a asignar
+     */
     public void setIntereses(ArrayList<String> intereses) { this.intereses = intereses; }
 
+    /**
+     * Retorna la colección de objetos del coleccionista.
+     * @return Lista de objetos
+     */
     public ArrayList<Objeto> getColeccion() { return coleccion; }
+
+    /**
+     * Establece la colección de objetos del coleccionista.
+     * @param coleccion Lista de objetos a asignar
+     */
     public void setColeccion(ArrayList<Objeto> coleccion) { this.coleccion = coleccion; }
 
     /**
